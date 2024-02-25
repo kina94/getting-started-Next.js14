@@ -1,5 +1,5 @@
-import { URL } from "../constants/api";
-import styles from "../styles/movie-credits.module.css";
+import { URL } from "@constants/api";
+import styles from "@styles/movie-credits.module.css";
 
 async function getMovieCredits(id: string) {
   const response = await fetch(`${URL}/${id}/credits`);

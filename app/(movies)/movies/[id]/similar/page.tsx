@@ -1,7 +1,7 @@
 import { IParams } from "../page";
-import styles from "../../../../../styles/home.module.css";
-import Movie from "../../../../../components/movie";
-import { URL } from "../../../../../constants/api";
+import styles from "@styles/home.module.css";
+import Movie from "@components/movie";
+import { URL } from "@constants/api";
 
 async function getSimiliarMovie(id: string) {
   const response = await fetch(`${URL}/${id}/similar`);

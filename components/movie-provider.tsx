@@ -1,5 +1,5 @@
-import { URL } from "../constants/api";
-import styles from "../styles/movie-providers.module.css";
+import { URL } from "@constants/api";
+import styles from "@styles/movie-providers.module.css";
 
 async function getMovieProviders(id: string) {
   const response = await fetch(`${URL}/${id}/providers`);
