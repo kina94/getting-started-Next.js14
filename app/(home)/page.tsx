@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export const URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 import styles from "../../styles/home.module.css";
 
-async function getMovies() {
+export async function getMovies() {
   const response = await fetch(URL);
   const json = await response.json();
   return json;
