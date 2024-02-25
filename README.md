@@ -31,10 +31,21 @@ export const metadata: Metadata = {
   },
 }
 ```
+- generateMetadata를 사용하여 동적으로 메타 데이터를 주입할 수 있다. 서버 컴포넌트에서만 사용 가능하다. 또한, 메타 데이터를 생성하기위해 함수 내에서 fetch를 호출해도 fetch가 캐싱되어 있기 때문에 성능상의 문제가 발생하지 않는다.
+- 컴포넌트와 마찬가지로 props로 현재 url 정보를 호출할 수 있다.
+```javascript
+export async function generateMetadata({ params: { id } }: IParams) {
+  const movie = await getMovie(id);
+  return {
+    title: movie.title,
+  };
+}
+```
+
 
 ### Route
 - () 소괄호를 사용하여 루트를 그룹화할 수 있다. 괄호를 사용하면 라우팅 url에 포함되지 않는다.
-- [] 대괄호를 사용하여 다이나믹 루트를 사용할 수 있다. 컴포넌트에서 props를 호출하면 대괄호 내부메 명칭한 이름을 키값으로 현재 url을 받을 수 있다.
+- [] 대괄호를 사용하여 다이나믹 루트를 사용할 수 있다. 컴포넌트에서 props를 호출하면 대괄호 내부메 명칭한 이름을 키값으로 현재 url을 받을 수 있다. 
 
 
 ## Data Fetching
@@ -119,7 +130,19 @@ export default async function MovieDetail({
 }
 ```
 
+### Prefetch
+- Link 컴포넌트의 prefetch 속성을 사용하여 리소스를 미리 불러올 수 있어 사용자 경험을 향상시킬 수 있고 서버의 리소스 과부하를 방지할 수 있다.
+
 ### Error Handling
 - 서버 컴포넌트에서는 error.tsx를 통해 해당 페이지, 또는 자식 컴포넌트에서 런타임 에러가 발생하면 에러 페이지를 보여줄 수 있다.
 - 에러 페이지는 같은 뎁스에 있는 페이지에서 발생하는 에러에 한정하여 적용된다.
 - 페이지와 같은 뎁스에 존재해야 한다.
+
+## Styles
+### Global Styles
+- 글로벌 스타일은 global.css로 생성하며, 어플리케이션의 모든 레이아웃, 페이지 또는 컴포넌트에 전역으로 스타일을 설정할 때 사용된다.
+
+### CSS Moudles
+- Next.js는 .module.css 확장자를 사용하여 고유한 클래스 이름을 자동으로 생성하고 CSS 범위를 임포트한 컴포넌트로 지정한다. 이를 통해 충돌을 걱정하지 않아도 되고, 다른 파일에서 동일한 클래스명을 사용할 수 있다.
+
+
