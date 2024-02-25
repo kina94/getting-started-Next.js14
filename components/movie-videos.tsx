@@ -1,4 +1,4 @@
-import { URL } from "../app/(home)/page";
+import { URL } from "../constants/api";
 import styles from "../styles/movie-videos.module.css";
 
 async function getVideos(id: string) {
