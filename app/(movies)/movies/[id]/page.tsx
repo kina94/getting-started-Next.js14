@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import MovieInfo, { getMovie } from "../../../../components/movie-info";
 import MovieVideos from "../../../../components/movie-videos";
 
-interface IParams {
+export interface IParams {
   params: { id: string };
 }
 

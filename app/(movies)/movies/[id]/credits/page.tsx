@@ -1,5 +1,6 @@
-import React from "react";
+import MovieCredits from "../../../../../components/movie-credits";
+import { IParams } from "../page";
 
-export default function Credits() {
-  return <div>Credits</div>;
+export default function CreditsPage({ params: { id } }: IParams) {
+  return <MovieCredits id={id} />;
 }
