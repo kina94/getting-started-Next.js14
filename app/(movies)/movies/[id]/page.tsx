@@ -8,13 +8,13 @@ export default function MovieDetail({
   params: { id: string };
 }) {
   return (
-    <h1>
+    <div>
       <Suspense fallback={<h1>Loading movie info</h1>}>
         <MovieInfo id={id} />
       </Suspense>
       <Suspense fallback={<h1>Loading move video</h1>}>
         <MovieVideos id={id} />
       </Suspense>
-    </h1>
+    </div>
   );
 }
