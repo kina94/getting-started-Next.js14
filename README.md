@@ -101,7 +101,7 @@ export default async function HomePage() {
 - page.tsx와 같은 뎁스에 존재해야 한다. 같은 뎁스에 존재하는 page가 로드되는 동안 즉시 로딩 상태를 표시할 수 있고, 로딩이 완료되면 로드된 component로 자동 교체된다.
 - 사용자가 웹사이트에 접근하는 순간 Next.js는 서버에서 렌더링된 HTML을 청크로 나눠 준비가 완료된 HTML을 브라우저에게 먼저 서빙하고, 데이터 fetching 중인 async 컴포넌트는 await으로 대기하다 await이 끝나면 브라우저에게 마지막 HTML 부분을 전달한다. 그 후 프레임워크는 loading component를 async component로 대체한다.
 - 이를 통해 서버 컴포넌트에서 fetch 시 response가 도착할 때까지 사용자가 UI를 볼 수 없는 문제점을 해결할 수 있다.
-- https://nextjs.org/docs/app/builidng-you-application/routing/loading-ui-and-streaming
+https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming
 
 ### Parallel Reqeusts
 - Promise.all() 메서드는 연관된 비동기 작업 여러 개가 동시에 이행되어야 하는 경우에 사용한다. 입력 값으로 들어온 프로미스 중 하나라도 실패하면 Promise.all() 전체가 실패한다.
